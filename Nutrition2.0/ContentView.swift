@@ -11,19 +11,17 @@ import CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+    let fetchRequest: NSFetchRequest<Food> = Food.fetchRequest()
+    var foods: FetchedResults<Food>
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(items) { item in
+                ForEach(foods) { food in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        Text("Item at \(food, formatter: itemFormatter)")
                     } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                        Text(food, formatter: itemFormatter)
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -33,7 +31,7 @@ struct ContentView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button(action: addFood) {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
@@ -42,10 +40,9 @@ struct ContentView: View {
         }
     }
 
-    private func addItem() {
+    private func addFood() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newFood = Food(context: viewContext)
 
             do {
                 try viewContext.save()
@@ -60,7 +57,7 @@ struct ContentView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { foods[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()
@@ -83,6 +80,6 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView(foods: <#FetchedResults<Food>#>).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

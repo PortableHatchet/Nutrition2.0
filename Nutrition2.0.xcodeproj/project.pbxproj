@@ -13,6 +13,8 @@
 		EF9E62312A056B0B00A1064D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF9E62302A056B0B00A1064D /* Preview Assets.xcassets */; };
 		EF9E62332A056B0B00A1064D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E62322A056B0B00A1064D /* Persistence.swift */; };
 		EF9E62362A056B0B00A1064D /* Nutrition2_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF9E62342A056B0B00A1064D /* Nutrition2_0.xcdatamodeld */; };
+		EF9E623E2A056F1500A1064D /* Food+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E623C2A056F1500A1064D /* Food+CoreDataClass.swift */; };
+		EF9E62442A0575A400A1064D /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9E62432A0575A400A1064D /* AddFoodView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		EF9E62302A056B0B00A1064D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF9E62322A056B0B00A1064D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		EF9E62352A056B0B00A1064D /* Nutrition2_0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nutrition2_0.xcdatamodel; sourceTree = "<group>"; };
+		EF9E623C2A056F1500A1064D /* Food+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Food+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EF9E62432A0575A400A1064D /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +59,14 @@
 		EF9E62282A056B0900A1064D /* Nutrition2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				EF9E62402A056FA400A1064D /* Model */,
 				EF9E62292A056B0900A1064D /* Nutrition2_0App.swift */,
 				EF9E622B2A056B0900A1064D /* ContentView.swift */,
 				EF9E622D2A056B0B00A1064D /* Assets.xcassets */,
 				EF9E62322A056B0B00A1064D /* Persistence.swift */,
 				EF9E62342A056B0B00A1064D /* Nutrition2_0.xcdatamodeld */,
 				EF9E622F2A056B0B00A1064D /* Preview Content */,
+				EF9E62432A0575A400A1064D /* AddFoodView.swift */,
 			);
 			path = Nutrition2.0;
 			sourceTree = "<group>";
@@ -71,6 +77,14 @@
 				EF9E62302A056B0B00A1064D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EF9E62402A056FA400A1064D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF9E623C2A056F1500A1064D /* Food+CoreDataClass.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +157,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF9E623E2A056F1500A1064D /* Food+CoreDataClass.swift in Sources */,
 				EF9E62332A056B0B00A1064D /* Persistence.swift in Sources */,
+				EF9E62442A0575A400A1064D /* AddFoodView.swift in Sources */,
 				EF9E622C2A056B0900A1064D /* ContentView.swift in Sources */,
 				EF9E62362A056B0B00A1064D /* Nutrition2_0.xcdatamodeld in Sources */,
 				EF9E622A2A056B0900A1064D /* Nutrition2_0App.swift in Sources */,
